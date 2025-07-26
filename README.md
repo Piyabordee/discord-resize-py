@@ -28,7 +28,7 @@ To run this project locally, you will need Python and FFmpeg installed and acces
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/Piyabordee/discord-resize-py.git](https://github.com/Piyabordee/discord-resize-py.git)
+    git clone https://github.com/Piyabordee/discord-resize-py.git
     ```
 2.  **Navigate to the project directory:**
     ```bash

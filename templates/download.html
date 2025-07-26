@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Compression Complete</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="main-logo">
+
+        <h1>การบีบอัดเสร็จสมบูรณ์!</h1>
+
+        <p style="margin-bottom: 25px;">ไฟล์ของคุณพร้อมให้ดาวน์โหลดแล้ว</p>
+
+        <a href="{{ url_for('download_file', filename=filename) }}" class="button-download">ดาวน์โหลดไฟล์</a>
+
+        <form action="{{ url_for('cleanup') }}" method="post" style="margin-top: 15px;">
+            <button type="submit" class="button-secondary">บีบอัดไฟล์อื่น</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,178 @@
+/* --- การตั้งค่าโดยรวม --- */
+body {
+    background-color: #101727;
+    /* Dark Navy Blue */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #e2e8f0;
+    /* สีตัวอักษรโดยรวม (เทาอ่อน) */
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* --- กรอบเนื้อหาหลัก --- */
+.container {
+    background-color: #1e293b;
+    /* สีพื้นหลังของกล่อง (น้ำเงินเข้มกว่า) */
+    padding: 30px 40px;
+    border-radius: 12px;
+    /* ทำให้ขอบมน */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    /* เพิ่มเงาให้ดูมีมิติ */
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* --- หัวข้อ H1 --- */
+h1 {
+    color: #ffffff;
+    /* สีขาว */
+    margin-bottom: 25px;
+}
+
+/* --- สไตล์ของปุ่มเลือกไฟล์ที่ซ่อนอยู่ --- */
+input[type="file"] {
+    display: none;
+    /* ซ่อนปุ่มเลือกไฟล์ของเบราว์เซอร์ */
+}
+
+/* --- สไตล์ของปุ่มเลือกไฟล์ที่เราสร้างขึ้นมาเอง --- */
+.custom-file-upload {
+    border: 1px solid #334155;
+    background-color: #334155;
+    display: inline-block;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    width: 80%;
+    text-align: center;
+    transition: background-color 0.2s;
+    /* เพิ่ม animation ตอน hover */
+}
+
+.custom-file-upload:hover {
+    background-color: #475569;
+    /* สีเปลี่ยนไปเมื่อเอาเมาส์มาวาง */
+}
+
+/* --- สไตล์ของปุ่ม Submit --- */
+input[type="submit"] {
+    background-color: #3b82f6;
+    /* สีน้ำเงินสดใส */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    width: calc(80% + 32px);
+    /* ทำให้ความกว้างใกล้เคียงกับปุ่มบน */
+    transition: background-color 0.2s;
+}
+
+input[type="submit"]:hover {
+    background-color: #2563eb;
+    /* สีเข้มขึ้นเมื่อเอาเมาส์มาวาง */
+}
+
+/* --- สไตล์ของโลโก้หลัก --- */
+.main-logo {
+    max-width: 150px;
+    /* กำหนดความกว้างสูงสุดของโลโก้ */
+    margin-bottom: 20px;
+    /* เพิ่มระยะห่างด้านล่างระหว่างโลโก้กับหัวข้อ */
+}
+
+/* --- สไตล์ของ Loading Indicator --- */
+#loading-indicator {
+    margin-top: 25px;
+    color: #94a3b8;
+    /* สีเทาอมฟ้า */
+}
+
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    /* สีวงแหวนจางๆ */
+    border-radius: 50%;
+    border-top: 4px solid #3b82f6;
+    /* สีน้ำเงินของวงแหวนที่หมุน */
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    /* ทำให้หมุน */
+    margin: 0 auto 15px auto;
+    /* จัดให้อยู่กลางและเว้นระยะล่าง */
+}
+
+/* --- Keyframes สำหรับ Animation การหมุน --- */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* --- สไตล์สำหรับปุ่มในหน้า Download --- */
+.button-download,
+.button-secondary {
+    display: block;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    width: calc(80% + 32px);
+    /* ปรับความกว้างให้เต็ม */
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    /* เพิ่ม cursor pointer */
+    border: none;
+    /* เพิ่ม border: none */
+    transition: background-color 0.2s;
+}
+
+.button-download {
+    background-color: #22c55e;
+    color: white;
+    margin-bottom: 15px;
+    /* เพิ่มระยะห่างด้านล่าง */
+    text-align: center;
+    /* จัดข้อความให้อยู่กลาง */
+}
+
+.button-download:hover {
+    background-color: #16a34a;
+}
+
+.button-secondary {
+    background-color: #334155;
+    color: #e2e8f0;
+}
+
+.button-secondary:hover {
+    background-color: #475569;
+}
+
+/* --- สไตล์ของป้ายแสดงชื่อไฟล์ --- */
+#file-name-display {
+    display: block;
+    /* ทำให้ขึ้นบรรทัดใหม่ */
+    margin-top: -10px;
+    /* ขยับขึ้นไปให้ใกล้ปุ่มเลือกไฟล์ */
+    margin-bottom: 20px;
+    /* เพิ่มระยะห่างก่อนถึงปุ่ม Submit */
+    color: #94a3b8;
+    /* สีเทาอมฟ้า */
+    font-size: 14px;
+    font-style: italic;
+}

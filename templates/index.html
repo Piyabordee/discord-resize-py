@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Video Compressor</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="main-logo">
+
+        <h1>บีบอัดวิดีโอให้ไม่เกิน 10MB</h1>
+
+        <form id="upload-form" method="post" enctype="multipart/form-data">
+            <label for="video-upload" class="custom-file-upload">
+                เลือกไฟล์วิดีโอ...
+            </label>
+            <input id="video-upload" type="file" name="video" accept=".mp4">
+
+            <span id="file-name-display">ยังไม่ได้เลือกไฟล์</span>
+
+            <input type="submit" value="อัปโหลดและบีบอัด">
+        </form>
+
+        <div id="loading-indicator" style="display: none;">
+            <div class="spinner"></div>
+            <p>กำลังประมวลผล กรุณารอสักครู่...</p>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('upload-form');
+        const loadingIndicator = document.getElementById('loading-indicator');
+
+        // --- เพิ่มโค้ดส่วนนี้เข้ามา ---
+        const fileInput = document.getElementById('video-upload');
+        const fileNameDisplay = document.getElementById('file-name-display');
+
+        // ดักฟังเมื่อมีการเลือกไฟล์
+        fileInput.addEventListener('change', function () {
+            // เช็คว่าผู้ใช้เลือกไฟล์มาจริงหรือไม่
+            if (fileInput.files.length > 0) {
+                // นำชื่อไฟล์แรกที่เลือกมาแสดง
+                fileNameDisplay.textContent = fileInput.files[0].name;
+            } else {
+                // ถ้าผู้ใช้กดยกเลิก
+                fileNameDisplay.textContent = 'ยังไม่ได้เลือกไฟล์';
+            }
+        });
+        // --- จบส่วนที่เพิ่มเข้ามา ---
+
+        form.addEventListener('submit', function () {
+            // ซ่อนฟอร์มและป้ายแสดงชื่อไฟล์
+            form.style.display = 'none';
+            fileNameDisplay.style.display = 'none';
+
+            // แสดงสถานะการโหลด
+            loadingIndicator.style.display = 'block';
+        });
+    </script>
+
+</body>
+
+</html>

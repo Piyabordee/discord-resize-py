@@ -1,0 +1,11 @@
+# Ignore large executable files
+ffmpeg.exe
+ffprobe.exe
+ffplay.exe
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore the uploads folder (we don't need to track user-uploaded files)
+uploads/

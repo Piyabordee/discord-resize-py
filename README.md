@@ -26,6 +26,10 @@ Ever tried to share a cool game clip or a video meme on Discord, only to be bloc
 
 To run this project locally, you will need Python and FFmpeg installed and accessible in your system's PATH.
 
+0.  **🐧 If you're using Ubuntu/Linux, you can install FFmpeg by running:**
+    ```bash
+    sudo apt update && sudo apt install ffmpeg -y
+    ```
 1.  **Clone the repository:**
     ```bash
     git clone https://github.com/Piyabordee/discord-resize-py.git
